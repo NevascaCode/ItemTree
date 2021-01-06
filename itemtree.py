@@ -1,24 +1,25 @@
+'''ItemTree'''
+
 from Cores import Cores
 import os
-import pdb
+
 
 def validar_escolha():
+    '''Valida Escolha'''
     while True:
         try:
             escolha = int(input("Escolha: "))
             break
-        except:
+        except ValueError:
             Cores("Por favor informe um número!").red()
     return escolha
 
-espa = 1
-sux = 0
-
 class ItemTree(object):
     def __init__(self):
-        self.lista_items = {'raiz': ['wood', 'iron'], 'wood': [], 'iron': ['ouro', 'dima', 'pegasus'], 'ouro': ['latao', 'QUEBRA'], 'dima': [], 'latao': ['lata', 'latinha'], 'QUEBRA': [], 'lata': ['cobra'], 'latinha': [], 'cobra': [], 'pegasus': []}
+        self.lista_items = {'raiz': ['wood', 'iron'], 'wood': [], 'iron': ['ouro', 'dima', 'pegasus'], 'ouro': ['latao', 'QUEBRA'], 'dima': [], 'latao': ['lata', 'latinha', 'quebrinha'], 'QUEBRA': [], 'lata': ['cobra'], 'latinha': ['latonha', 'loca', 'coca'], 'cobra': [], 'pegasus': [], 'quebrinha': ['quebronha'], 'latonha': [], 'quebronha': [], 'loca': [], 'coca': ['latinhaaaa', 'fanta'], 'latinhaaaa': ['gente'], 'fanta': ['uva', 'junta'], 'uva': ['como'], 'junta': ['luna'], 'luna': [], 'como': [], 'gente': ['ruim'], 'ruim': []}
         self.item_pai = 'raiz'
         self.item_filho = ''
+        self.trilha = []
         self.criar_tela_inicial()
 
     def criar_tela_inicial(self):
@@ -65,21 +66,30 @@ class ItemTree(object):
         for item in self.lista_items["raiz"]:
             print(f'*{item}')
             self.verifica_filhos(item)
+            self.trilha = []
 
     def verifica_filhos(self, item):
-        global espa
-        global sux
+
         for dado in self.lista_items[item]:
+
+            self.trilha.append(not dado == self.lista_items[item][-1])
+
+            print(f'{" "}', end='')
+            for espaco in self.trilha[:-1]:
+                if espaco:
+                    print(f'{"┃"}', end='')
+                else:
+                    print(f'{" "}', end='')
+                print(f'{"  "}', end='')
+
             if dado == self.lista_items[item][-1]:
-                print(f'{" "*espa}┗╸{dado}')
+                print(f'┗╸{dado}')
             else:
-                print(f'{" "*espa}┣╸{dado}')
-            espa+= 2
-            if len(self.lista_items[item]) > 1:
-                sux += 1
+                print(f'┣╸{dado}')
+
             self.verifica_filhos(dado)
-            sux-=1
-            espa-= 2
+
+            self.trilha.pop(len(self.trilha)-1)
 
     def adiciona_item(self, filho, pai='raiz'):
         if pai in self.lista_items:
