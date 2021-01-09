@@ -1,17 +1,24 @@
 '''ItemTree'''
 
 from Cores import Cores
+from time import sleep
 import os
 
 
-def validar_escolha():
+def validar_escolha(lista_escolha=[]):
     '''Valida Escolha'''
     while True:
         try:
-            escolha = int(input("Escolha: "))
-            break
+            Cores.limpador()
+            escolha = int(input(f"┣ Escolha: {Cores.amarelo}"))
+            Cores.limpador()
+            if escolha not in lista_escolha:
+                print(f"{Cores.vermelho}┃Por favor escolha entre as opeções!")
+            else:
+                break
         except ValueError:
-            Cores("Por favor informe um número!").red()
+            Cores.limpador()
+            print(f"{Cores.vermelho}┃Por favor informe um número!")
     return escolha
 
 class ItemTree(object):
@@ -23,43 +30,54 @@ class ItemTree(object):
         self.criar_tela_inicial()
 
     def criar_tela_inicial(self):
-        print(f"{'-=-='*10}-")
-        print(f"{'Bem Vindo ao Item-Tree':^41}")
-        print(f"{'-=-='*10}-")
+        print(f"{Cores.negrito}{Cores.verde}╋{'━━━━'*10}━╋")
+        print(f"┃{Cores.limpa}{Cores.verde}{f'Bem Vindo ao Item-Tree':^41}┃")
+        print(f"╋━━╋{'━━━━'*8}━━━╋━━╋")
 
-        print("1 - Criar uma Arvore de Item",
-              "\n2 - Executar uma Arvore de Item",
-              "\n3 - Sair")
+        print(f"{Cores.negrito}{Cores.verde}┃{f'┣❰ {Cores.amarelo}1{Cores.limpa} {Cores.negrito}{Cores.verde}- Executar uma Arvore de Item ❱┫':^60}",
+              f"\n{Cores.negrito}{Cores.verde}┃{f'┣━━❰ {Cores.amarelo}2{Cores.limpa} {Cores.verde}- Criar uma Arvore de Item ❱━┫':^56}",
+              f"\n┃{f'╋━━━━━━━━━━┳❰ {Cores.amarelo}3{Cores.limpa} {Cores.negrito}{Cores.verde}- Sair ❱┳━━━━━━━━━━━╋':^60}",
+              f"\n{Cores.negrito}{Cores.verde}┃{'╋━━━━━━━━━━━━╋':^41}")
 
-        escolha = validar_escolha()
-        while escolha not in [1, 2, 3]:
-            Cores("Por favor escolha entre as opeções!").red()
-            escolha = validar_escolha()
+        escolha = validar_escolha([1,2,3])
 
-        if escolha == 1:
-            self.nome_da_arvore = str(input("Nome da Arvore: "))
+        if escolha == 2:
+            self.nome_da_arvore = str(input(f"┗ Nome da Arvore: {Cores.amarelo}"))
+            Cores.limpador()
             self.criar_arvore()
-        elif escolha ==2:
-            print('Em Breve')
+        elif escolha ==1:
+            print('┣ Em Breve')
         else:
-            print('Obrigado por testar!!!')
+            print('┣ Obrigado por testar!!!')
 
     def criar_arvore(self):
         os.system("cls")
-        print(f"{'-=-'*10}-")
-        print(f"{self.nome_da_arvore:^31}")
-        print(f"{'-=-'*10}-")
-        print(self.lista_items)
-        print(f"{'-=-'*10}-")
+        len_nome = len(self.nome_da_arvore)+6
+        print(f"╋{'━'*len_nome}╋")
+        print(f"┃   {Cores.amarelo}{self.nome_da_arvore}{Cores.limpa}   ┃")
+        print(f"╋{'━'*len_nome}╋")
 
         self.criar_lista()
 
-        self.item_pai = str(input('Item pai: '))
-        if self.item_pai == '':
-            self.item_pai = 'raiz'
-        self.item_filho = str(input('item: '))
+        print(f"╋{'━'*24}╋")
+        print(f"┣❰ {Cores.amarelo}1{Cores.limpa} - Salvar Item-Tree ❱┫")
+        print(f"┣━❰ {Cores.amarelo}2{Cores.limpa} - Adicionar Item ❱━┫")
+        print(f"╋{'━'*24}╋")
 
-        self.adiciona_item(self.item_filho, self.item_pai)
+        escolha = validar_escolha([1,2])
+        if escolha == 1:
+            print(f"┣{'━'*15}━")
+            self.item_pai = str(input('┃ Item pai: '))
+            if self.item_pai == '':
+                self.item_pai = 'raiz'
+            self.item_filho = str(input('┃ item: '))
+            print(f"┗{'━'*15}━")
+            sleep(0.5)
+            self.adiciona_item(self.item_filho, self.item_pai)
+        else:
+            print("salvar em breve!!!")
+            sleep(1)
+
         self.criar_arvore()
 
     def criar_lista(self):
