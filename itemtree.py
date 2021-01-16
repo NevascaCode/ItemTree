@@ -57,30 +57,28 @@ class ItemTree(object):
     def criar_arvore(self):
         os.system("cls")
         len_nome = len(self.nome_da_arvore)+6
-        print(f"╋{'━'*len_nome}╋")
-        print(f"┃   {Cores.amarelo}{self.nome_da_arvore}{Cores.limpa}   ┃")
-        print(f"╋{'━'*len_nome}╋")
+        print(f"{Cores.verde}╋{'━'*len_nome}{Cores.negrito}{Cores.verde}╋")
+        print(f"┃   {Cores.amarelo}{self.nome_da_arvore}{Cores.limpa}   {Cores.verde}┃")
+        print(f"{Cores.verde}╋{'━'*len_nome}╋")
 
         self.desenhar_arvore()
 
-        print(f"╋{'━'*24}╋")
-        print(f"┣❰ {Cores.amarelo}1{Cores.limpa} - Salvar Item-Tree ❱┫")
-        print(f"┣━❰ {Cores.amarelo}2{Cores.limpa} - Adicionar Item ❱━┫")
-        print(f"╋{'━'*24}╋")
-
+        print(f"{Cores.verde}╋{'━'*24}╋")
+        print(f"{Cores.verde}┣❰ {Cores.amarelo}1{Cores.limpa} {Cores.negrito}{Cores.verde}- Salvar Item-Tree ❱┫")
+        print(f"{Cores.verde}┣━❰ {Cores.amarelo}2{Cores.limpa} {Cores.negrito}{Cores.verde}- Adicionar Item ❱━┫")
+        print(f"{Cores.verde}╋{'━'*24}╋")
+        Cores.limpador()
         escolha = validar_escolha([1,2])
         if escolha == 1:
             self.salvar_arvore()
         elif escolha == 2:
             self.adiciona_galho()
-        else:
-            print("Informe uma opção porra")
 
         self.criar_arvore()
 
     def desenhar_arvore(self):
         for item in self.lista_items["raiz"][1:]:
-            print(f'*{item}')
+            print(f'{self.lista_items[item][0]["cor"]}*{item}')
             self.desenhar_item_galhos(item)
             self.trilha = []
 
@@ -91,25 +89,24 @@ class ItemTree(object):
 
             for espaco in self.trilha[:-1]:
                 if espaco["galho"]:
-                    print(f'{espaco["corl"]}{"┃"}', end='')
+                    print(f'{espaco["corl"]}{"┃"}{Cores.limpa}', end='')
                 else:
                     print(f'{" "}', end='')
                 print(f'{"  "}', end='')
-
             if dado == self.lista_items[item][-1]:
                 print(f'{self.lista_items[dado][0]["cor"]}┗╸{dado}')
             else:
                 print(f'{self.lista_items[dado][0]["cor"]}┣╸{dado}')
-
+            Cores.limpador()
             self.desenhar_item_galhos(dado)
 
             self.trilha.pop(len(self.trilha)-1)
 
     def adiciona_galho(self):
-        print(f"┣{'━'*15}━")
+        print(f"{Cores.negrito}{Cores.verde}┣{'━'*15}━")
         while True:
             try:
-                item_pai = str(input('┃ Item pai: '))
+                item_pai = str(input(f'{Cores.verde}┃ Item pai: {Cores.amarelo}'))
                 if item_pai == '':
                     item_pai = 'raiz'
                 if item_pai in self.lista_items or item_pai == 'raiz':
@@ -119,7 +116,15 @@ class ItemTree(object):
             except ValueError:
                 print(f"{Cores.vermelho}┣ Não existe esse item{Cores.limpa}")
 
-        item_filho = str(input('┃ item: '))
+        while True:
+            try:
+                item_filho = str(input(f'{Cores.verde}┃ Item filho: {Cores.amarelo}'))
+                if item_filho in self.lista_items:
+                    raise ValueError
+                else:
+                    break
+            except ValueError:
+                print(f"{Cores.vermelho}┣ Já existe esse item!!{Cores.limpa}")
 
         cor = self.escolher_cor()
 
@@ -162,7 +167,7 @@ class ItemTree(object):
         print(f"{Cores.negrito}{Cores.branco}{'┗╸ 16 = Negrito Branco':>30}{Cores.limpa}{Cores.verde}{'┃':>8}")
         Cores.limpador()
         print(f"{Cores.verde}╋{'━'*50}╋")
-        escolha = validar_escolha([1, 2, 3])
+        escolha = validar_escolha([x for x in range(1, 17)])
         if escolha == 1:
             return f"{Cores.preto}"
         elif escolha == 2:
@@ -196,9 +201,11 @@ class ItemTree(object):
         elif escolha == 16:
             return f"{Cores.negrito}{Cores.branco}"
         else:
-            print("Okay sem cor")
+            return f"{Cores.negrito}{Cores.preto}"
+
     def salvar_arvore(self):
-        with open(self.nome_da_arvore + ".json", "w") as arquivo:
+        nome_arquivo = str(input(f"{Cores.verde}┣Nome do arquivo: {Cores.amarelo}"))
+        with open(nome_arquivo + ".json", "w") as arquivo:
             dados = {"nome":self.nome_da_arvore, "arvore": self.lista_items}
             json.dump(dados, arquivo, indent=3)
         print(f"{Cores.negrito}{Cores.verde}┗ Salvo com Sucesso!{Cores.limpa}")
