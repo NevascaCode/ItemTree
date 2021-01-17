@@ -1,0 +1,364 @@
+{
+   "nome": "Great Sword and Long Sword Tree",
+   "arvore": {
+      "raiz": [
+         {
+            "cor": "\u001b[32m"
+         },
+         "Buster Sword"
+      ],
+      "Buster Sword": [
+         {
+            "cor": "\u001b[1m\u001b[33m"
+         },
+         "Buster Sword+",
+         "White Serpentblade",
+         "Blango Destroyer"
+      ],
+      "White Serpentblade": [
+         {
+            "cor": "\u001b[1m\u001b[33m"
+         },
+         "Silver Serpentblade"
+      ],
+      "Blango Destroyer": [
+         {
+            "cor": "\u001b[1m\u001b[33m"
+         },
+         "Blango Destroyer+"
+      ],
+      "Blango Destroyer+": [
+         {
+            "cor": "\u001b[32m"
+         },
+         "Blango Decimator"
+      ],
+      "Blango Decimator": [
+         {
+            "cor": "\u001b[32m"
+         },
+         "Blango Destructor"
+      ],
+      "Blango Destructor": [
+         {
+            "cor": "\u001b[34m"
+         },
+         "C.Blango Decimator"
+      ],
+      "C.Blango Decimator": [
+         {
+            "cor": "\u001b[1m\u001b[37m"
+         },
+         "C.Blango Destructor"
+      ],
+      "C.Blango Destructor": [
+         {
+            "cor": "\u001b[1m\u001b[37m"
+         }
+      ],
+      "Silver Serpentblade": [
+         {
+            "cor": "\u001b[32m"
+         },
+         "Vile Serpentblade",
+         "Golden Serpentblade"
+      ],
+      "Vile Serpentblade": [
+         {
+            "cor": "\u001b[32m"
+         },
+         "Deadly Serpentblade"
+      ],
+      "Deadly Serpentblade": [
+         {
+            "cor": "\u001b[1m\u001b[32m"
+         },
+         "Poison Serpentblade"
+      ],
+      "Poison Serpentblade": [
+         {
+            "cor": "\u001b[34m"
+         }
+      ],
+      "Golden Serpentblade": [
+         {
+            "cor": "\u001b[32m"
+         }
+      ],
+      "Buster Sword+": [
+         {
+            "cor": "\u001b[33m"
+         },
+         "Buster Blade",
+         "Defender",
+         "See Iron Katana Path for more information"
+      ],
+      "Buster Blade": [
+         {
+            "cor": "\u001b[32m"
+         },
+         "Ravager Blade",
+         "Cat's Soul"
+      ],
+      "Defender": [
+         {
+            "cor": "\u001b[1m\u001b[33m"
+         },
+         "Sentinel"
+      ],
+      "See Iron Katana Path for more information": [
+         {
+            "cor": "\u001b[1m\u001b[30m"
+         }
+      ],
+      "Sentinel": [
+         {
+            "cor": "\u001b[33m"
+         },
+         "Barbaroi Blade",
+         "Halberd"
+      ],
+      "Barbaroi Blade": [
+         {
+            "cor": "\u001b[32m"
+         },
+         "Crimson Goat"
+      ],
+      "Halberd": [
+         {
+            "cor": "\u001b[33m"
+         },
+         "Judgment"
+      ],
+      "Judgment": [
+         {
+            "cor": "\u001b[32m"
+         }
+      ],
+      "Crimson Goat": [
+         {
+            "cor": "\u001b[32m"
+         }
+      ],
+      "Ravager Blade": [
+         {
+            "cor": "\u001b[32m"
+         },
+         "Ravager Blade+",
+         "Khezu Shock Sword"
+      ],
+      "Cat's Soul": [
+         {
+            "cor": "\u001b[32m"
+         },
+         "Cat's Curse"
+      ],
+      "Cat's Curse": [
+         {
+            "cor": "\u001b[32m"
+         },
+         "Cat's King"
+      ],
+      "Cat's King": [
+         {
+            "cor": "\u001b[1m\u001b[32m"
+         },
+         "Cat of Venus"
+      ],
+      "Cat of Venus": [
+         {
+            "cor": "\u001b[34m"
+         },
+         "Cat of Gold"
+      ],
+      "Cat of Gold": [
+         {
+            "cor": "\u001b[1m\u001b[34m"
+         }
+      ],
+      "Ravager Blade+": [
+         {
+            "cor": "\u001b[32m"
+         },
+         "Tactical Blade",
+         "Chrome Razor"
+      ],
+      "Khezu Shock Sword": [
+         {
+            "cor": "\u001b[32m"
+         },
+         "Khezu Shock Blade"
+      ],
+      "Khezu Shock Blade": [
+         {
+            "cor": "\u001b[34m"
+         },
+         "Khezu Shock Full"
+      ],
+      "Khezu Shock Full": [
+         {
+            "cor": "\u001b[1m\u001b[34m"
+         },
+         "Khezu Shock Full+"
+      ],
+      "Khezu Shock Full+": [
+         {
+            "cor": "\u001b[1m\u001b[37m"
+         }
+      ],
+      "Tactical Blade": [
+         {
+            "cor": "\u001b[1m\u001b[32m"
+         },
+         "Strategic Blade"
+      ],
+      "Strategic Blade": [
+         {
+            "cor": "\u001b[1m\u001b[32m"
+         }
+      ],
+      "Chrome Razor": [
+         {
+            "cor": "\u001b[32m"
+         },
+         "Chrome Death Razor",
+         "Carbalite Sword"
+      ],
+      "Chrome Death Razor": [
+         {
+            "cor": "\u001b[34m"
+         }
+      ],
+      "Carbalite Sword": [
+         {
+            "cor": "\u001b[32m"
+         },
+         "Carbalite Sword+",
+         "Bronze Coin",
+         "Guardian Sword"
+      ],
+      "Carbalite Sword+": [
+         {
+            "cor": "\u001b[1m\u001b[32m"
+         },
+         "Lacerator Blade",
+         "Demon Halberd",
+         "Decider"
+      ],
+      "Bronze Coin": [
+         {
+            "cor": "\u001b[34m"
+         },
+         "Gaoren Coin"
+      ],
+      "Guardian Sword": [
+         {
+            "cor": "\u001b[32m"
+         },
+         "Imperial Sword"
+      ],
+      "Gaoren Coin": [
+         {
+            "cor": "\u001b[1m\u001b[34m"
+         },
+         "Gaoren Cleaver"
+      ],
+      "Gaoren Cleaver": [
+         {
+            "cor": "\u001b[1m\u001b[37m"
+         }
+      ],
+      "Imperial Sword": [
+         {
+            "cor": "\u001b[1m\u001b[32m"
+         },
+         "Aqua Guardian"
+      ],
+      "Aqua Guardian": [
+         {
+            "cor": "\u001b[34m"
+         },
+         "Atlantica",
+         "Edelweiss Ice Blade"
+      ],
+      "Atlantica": [
+         {
+            "cor": "\u001b[1m\u001b[37m"
+         }
+      ],
+      "Edelweiss Ice Blade": [
+         {
+            "cor": "\u001b[1m\u001b[34m"
+         },
+         "Edelweiss Ice Blade+\t"
+      ],
+      "Edelweiss Ice Blade+\t": [
+         {
+            "cor": "\u001b[1m\u001b[37m"
+         }
+      ],
+      "Lacerator Blade": [
+         {
+            "cor": "\u001b[1m\u001b[32m"
+         },
+         "Master Blaze"
+      ],
+      "Master Blaze": [
+         {
+            "cor": "\u001b[1m\u001b[34m"
+         }
+      ],
+      "Demon Halberd": [
+         {
+            "cor": "\u001b[1m\u001b[32m"
+         },
+         "Great Demon Halberd"
+      ],
+      "Great Demon Halberd": [
+         {
+            "cor": "\u001b[34m"
+         },
+         "GrtDemnHalberdRaksha"
+      ],
+      "GrtDemnHalberdRaksha": [
+         {
+            "cor": "\u001b[1m\u001b[37m"
+         }
+      ],
+      "Decider": [
+         {
+            "cor": "\u001b[34m"
+         },
+         "Punisher",
+         "Igneous Blade",
+         "Liquid Fire Blade"
+      ],
+      "Punisher": [
+         {
+            "cor": "\u001b[1m\u001b[37m"
+         }
+      ],
+      "Igneous Blade": [
+         {
+            "cor": "\u001b[34m"
+         },
+         "Igneous Sword"
+      ],
+      "Igneous Sword": [
+         {
+            "cor": "\u001b[1m\u001b[37m"
+         }
+      ],
+      "Liquid Fire Blade": [
+         {
+            "cor": "\u001b[1m\u001b[34m"
+         },
+         "Divine Fire Blade"
+      ],
+      "Divine Fire Blade": [
+         {
+            "cor": "\u001b[1m\u001b[37m"
+         }
+      ]
+   }
+}
