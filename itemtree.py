@@ -80,12 +80,18 @@ class ItemTree(object):
         self.criar_arvore()
 
     def deletar_galho(self):
-        nome_deletar = str(input(f"{Cores.verde}┣ Nome do Item: {Cores.amarelo}"))
-        self.lista_items.pop(nome_deletar)
-        for galho in self.lista_items:
-            if nome_deletar in self.lista_items[galho]:
-                self.lista_items[galho].remove(nome_deletar)
-        print(f"{Cores.negrito}{Cores.verde}┗ Deletado com Sucesso!{Cores.limpa}")
+        try:
+            nome_deletar = str(input(f"{Cores.verde}┣ Nome do Item: {Cores.amarelo}"))
+            self.lista_items.pop(nome_deletar)
+            for galho in self.lista_items:
+                if nome_deletar in self.lista_items[galho]:
+                    self.lista_items[galho].remove(nome_deletar)
+            print(f"{Cores.negrito}{Cores.verde}┗ Deletado com Sucesso!{Cores.limpa}")
+
+        except KeyError:
+            print(f"{Cores.vermelho}┗ Item não existe!{Cores.limpa}")
+        sleep(0.5)
+
 
     def desenhar_arvore(self):
         for item in self.lista_items["raiz"][1:]:
