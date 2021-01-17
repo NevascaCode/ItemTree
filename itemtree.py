@@ -66,15 +66,26 @@ class ItemTree(object):
         print(f"{Cores.verde}╋{'━'*24}╋")
         print(f"{Cores.verde}┣❰ {Cores.amarelo}1{Cores.limpa} {Cores.negrito}{Cores.verde}- Salvar Item-Tree ❱┫")
         print(f"{Cores.verde}┣━❰ {Cores.amarelo}2{Cores.limpa} {Cores.negrito}{Cores.verde}- Adicionar Item ❱━┫")
+        print(f"{Cores.verde}┣━━❰ {Cores.amarelo}3{Cores.limpa} {Cores.negrito}{Cores.verde}- Deletar Item ❱━━┫")
         print(f"{Cores.verde}╋{'━'*24}╋")
         Cores.limpador()
-        escolha = validar_escolha([1,2])
+        escolha = validar_escolha([1, 2, 3])
         if escolha == 1:
             self.salvar_arvore()
         elif escolha == 2:
             self.adiciona_galho()
+        elif escolha == 3:
+            self.deletar_galho()
 
         self.criar_arvore()
+
+    def deletar_galho(self):
+        nome_deletar = str(input(f"{Cores.verde}┣ Nome do Item: {Cores.amarelo}"))
+        self.lista_items.pop(nome_deletar)
+        for galho in self.lista_items:
+            if nome_deletar in self.lista_items[galho]:
+                self.lista_items[galho].remove(nome_deletar)
+        print(f"{Cores.negrito}{Cores.verde}┗ Deletado com Sucesso!{Cores.limpa}")
 
     def desenhar_arvore(self):
         for item in self.lista_items["raiz"][1:]:
