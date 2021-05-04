@@ -5,5 +5,5 @@
 
 ### Um simples criador de arvore de items feito em Python para o Prompt
 ## 🛠Como Usar🛠
-### Executar no console `python .\Builder.py`
+### Executar no console `python .\itemtree.py`
 ---
