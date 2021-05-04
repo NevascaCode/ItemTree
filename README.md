@@ -3,7 +3,7 @@
 # 🌲 GuyGun 🌲
 ![alt text](Demo.png "Title")
 
-### 🕹🐍 Um repo para testar ideias com PyGame 🕹🐍
+### Um simples criador de arvore de items feito em Python para o Prompt
 ## 🛠Como Usar🛠
 ### Executar no console `python .\Builder.py`
 ---
