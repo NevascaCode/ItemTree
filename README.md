@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img alt="ItemTree" title="Tree" src="./demo/demo.gif">
+  <img alt="ItemTree" title="Tree" src="./demo/Demo.gif">
 </h1>
 <p align="center">Esse projeto foi feito em Python com, intuito de fortificar meu aprendizado de programação.</p>
 <p align="center">
